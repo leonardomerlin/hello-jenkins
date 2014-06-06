@@ -98,10 +98,10 @@
 		<properties>
 			<liferay.version>6.1.2</liferay.version>
 			<liferay.maven.plugin.version>6.2.10.5</liferay.maven.plugin.version>
-			<liferay.auto.deploy.dir>/opt/liferay/empresa-simples/liferay-portal-6.1.2-ce-ga3/deploy</liferay.auto.deploy.dir>
-			<liferay.app.server.deploy.dir>/opt/liferay/empresa-simples/liferay-portal-6.1.2-ce-ga3/tomcat-7.0.40/webapps</liferay.app.server.deploy.dir>
-			<liferay.app.server.lib.global.dir>/opt/liferay/empresa-simples/liferay-portal-6.1.2-ce-ga3/tomcat-7.0.40/lib/ext</liferay.app.server.lib.global.dir>
-			<liferay.app.server.portal.dir>/opt/liferay/empresa-simples/liferay-portal-6.1.2-ce-ga3/tomcat-7.0.40/webapps/ROOT</liferay.app.server.portal.dir>
+			<liferay.auto.deploy.dir>/opt/liferay/liferay-portal-6.1.2-ce-ga3/deploy</liferay.auto.deploy.dir>
+			<liferay.app.server.deploy.dir>/opt/liferay/liferay-portal-6.1.2-ce-ga3/tomcat-7.0.40/webapps</liferay.app.server.deploy.dir>
+			<liferay.app.server.lib.global.dir>/opt/liferay/liferay-portal-6.1.2-ce-ga3/tomcat-7.0.40/lib/ext</liferay.app.server.lib.global.dir>
+			<liferay.app.server.portal.dir>/opt/liferay/liferay-portal-6.1.2-ce-ga3/tomcat-7.0.40/webapps/ROOT</liferay.app.server.portal.dir>
 		</properties>
 		</profile>
 	</profiles>
