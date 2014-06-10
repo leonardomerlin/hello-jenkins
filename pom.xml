@@ -1,69 +1,49 @@
 <?xml version="1.0"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
 	<modelVersion>4.0.0</modelVersion>
+	
 	<groupId>br.gov.serpro.test</groupId>
 	<artifactId>HelloMaven</artifactId>
-	<packaging>war</packaging>
-	<name>HelloMaven Portlet</name>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	
+	<name>HelloMaven Portlet</name>
+
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>com.liferay.maven.plugins</groupId>
 				<artifactId>liferay-maven-plugin</artifactId>
-				<version>${liferay.maven.plugin.version}</version>
-				<executions>
-					<execution>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>build-css</goal>
-						</goals>
-					</execution>
-				</executions>
+				<version>${liferay.version}</version>
 				<configuration>
 					<autoDeployDir>${liferay.auto.deploy.dir}</autoDeployDir>
-					<appServerDeployDir>${liferay.app.server.deploy.dir}</appServerDeployDir>
-					<appServerLibGlobalDir>${liferay.app.server.lib.global.dir}</appServerLibGlobalDir>
-					<appServerPortalDir>${liferay.app.server.portal.dir}</appServerPortalDir>
 					<liferayVersion>${liferay.version}</liferayVersion>
-					<pluginType>portlet</pluginType>
+					<pluginType>hook</pluginType>
 				</configuration>
 			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.5</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.5</source>
+					<target>1.5</target>
 				</configuration>
 			</plugin>
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.5</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.liferay.portal</groupId>
 			<artifactId>portal-service</artifactId>
-			<version>${liferay.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.liferay.portal</groupId>
-			<artifactId>util-bridges</artifactId>
-			<version>${liferay.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.liferay.portal</groupId>
-			<artifactId>util-taglib</artifactId>
 			<version>${liferay.version}</version>
 			<scope>provided</scope>
 		</dependency>
@@ -92,17 +72,35 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-<profiles>
-	<profile>
-		<id>Liferay-v6.1.2-CE-GA3-(Tomcat-7)-Empresa-Simples</id>
-		<properties>
-			<liferay.version>6.1.2</liferay.version>
-			<liferay.maven.plugin.version>6.2.10.5</liferay.maven.plugin.version>
-			<liferay.auto.deploy.dir>/opt/liferay/liferay-portal-6.1.2-ce-ga3/deploy</liferay.auto.deploy.dir>
-			<liferay.app.server.deploy.dir>/opt/liferay/liferay-portal-6.1.2-ce-ga3/tomcat-7.0.40/webapps</liferay.app.server.deploy.dir>
-			<liferay.app.server.lib.global.dir>/opt/liferay/liferay-portal-6.1.2-ce-ga3/tomcat-7.0.40/lib/ext</liferay.app.server.lib.global.dir>
-			<liferay.app.server.portal.dir>/opt/liferay/liferay-portal-6.1.2-ce-ga3/tomcat-7.0.40/webapps/ROOT</liferay.app.server.portal.dir>
-		</properties>
-		</profile>
-	</profiles>
+
+	<properties>
+		<liferay.auto.deploy.dir>/vagrant/shared/liferay/liferay-portal-6.1.2-ce-ga3/deploy</liferay.auto.deploy.dir>
+		<liferay.version>6.1.2</liferay.version>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>serpro.internal</id>
+			<name>Serpro Internal Repository</name>
+			<url>http://archiva.desenv.serpro/repository/internal</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>serpro.snapshots</id>
+			<name>Serpro Snapshots Repository</name>
+			<url>http://archiva.desenv.serpro/repository/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 </project>
