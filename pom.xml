@@ -25,17 +25,15 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<encoding>UTF-8</encoding>
-					<source>1.5</source>
-					<target>1.5</target>
-				</configuration>
+				<version>3.1</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
 			</plugin>
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
-				<configuration>
-					<encoding>UTF-8</encoding>
-				</configuration>
+				<version>2.6</version>
 			</plugin>
 		</plugins>
 	</build>
@@ -77,30 +75,5 @@
 		<liferay.auto.deploy.dir>/vagrant/shared/liferay/liferay-portal-6.1.2-ce-ga3/deploy</liferay.auto.deploy.dir>
 		<liferay.version>6.1.2</liferay.version>
 	</properties>
-
-	<repositories>
-		<repository>
-			<id>serpro.internal</id>
-			<name>Serpro Internal Repository</name>
-			<url>http://archiva.desenv.serpro/repository/internal</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>serpro.snapshots</id>
-			<name>Serpro Snapshots Repository</name>
-			<url>http://archiva.desenv.serpro/repository/snapshots</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
 
 </project>
